@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japan Workplace Stamp Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Japanese office culture</p>
+          <h1>Workplace Seal Generator</h1>
+        </div>
+        <div class="badge">Hanko-inspired demo</div>
+      </header>
+
+      <main class="layout">
+        <section class="panel form-panel">
+          <h2>Employee seal settings</h2>
+
+          <form id="stamp-form">
+            <div class="field-row">
+              <label for="employeeName">Employee name</label>
+              <input id="employeeName" name="employeeName" type="text" value="Sato Takashi" required />
+            </div>
+
+            <div class="field-row">
+              <label for="position">Position</label>
+              <select id="position" name="position">
+                <option value="President">President</option>
+                <option value="Executive Director">Executive Director</option>
+                <option value="General Manager">General Manager</option>
+                <option value="Director">Director</option>
+                <option value="Manager" selected>Manager</option>
+                <option value="Senior Staff">Senior Staff</option>
+                <option value="Staff">Staff</option>
+              </select>
+            </div>
+
+            <div class="field-row">
+              <label for="department">Department</label>
+              <input id="department" name="department" type="text" value="Operations" />
+            </div>
+
+            <div class="field-row">
+              <label for="employeeId">Employee ID</label>
+              <input id="employeeId" name="employeeId" type="text" value="OP-2048" />
+            </div>
+
+            <div class="field-row">
+              <label for="sealStyle">Seal style</label>
+              <select id="sealStyle" name="sealStyle">
+                <option value="official" selected>Official</option>
+                <option value="compact">Compact</option>
+                <option value="traditional">Traditional</option>
+              </select>
+            </div>
+
+            <div class="actions">
+              <button type="submit">Generate seal</button>
+              <button type="button" class="secondary" id="sampleBtn">Use sample</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel preview-panel">
+          <div class="preview-header">
+            <h2>Preview</h2>
+            <span id="rotationLabel">-12°</span>
+          </div>
+
+          <div class="stamp-stage">
+            <div id="stamp" class="stamp seal-official" aria-live="polite">
+              <div class="stamp-ring">
+                <div class="stamp-content">
+                  <div class="stamp-name" id="previewName">Sato Takashi</div>
+                  <div class="stamp-position" id="previewPosition">Manager</div>
+                  <div class="stamp-department" id="previewDepartment">Operations</div>
+                  <div class="stamp-id" id="previewId">OP-2048</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="note-box">
+            <h3>Reference</h3>
+            <p>
+              In Japan, workplace seals commonly follow a conservative and formal aesthetic.
+              Red hanko-style marks are often used for approval and personal identification,
+              with a subtle anti-clockwise tilt used to convey seniority or office rank.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
